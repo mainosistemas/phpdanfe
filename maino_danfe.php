@@ -24,6 +24,18 @@ class MainoDanfe extends Danfe
         $this->creditsIntegratorFooter("Emitida por Mainô - www.maino.com.br");
     }
 
+    /**
+     * Dados brutos do PDF
+     * @return string
+     */
+    public function render($logo)
+    {
+        if (empty($this->pdf)) {
+            $this->monta($logo);
+        }
+        return $this->pdf->getPdf();
+    }
+
      /**
      * habilitarImpressaoPisCofins
      * Ativa ou inativa a impressão dos totais de PIS e Cofins
