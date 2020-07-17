@@ -25,17 +25,9 @@ class MainoDanfe extends Danfe
     }
 
     /**
-     * Dados brutos do PDF
+     * Dados brutos do PDF, aceitando logo
      * @return string
      */
-    public function render($logo)
-    {
-        if (empty($this->pdf)) {
-            $this->monta($logo);
-        }
-        return $this->pdf->getPdf();
-    }
-
     public function render_com_logo($logo)
     {
         if (empty($this->pdf)) {
