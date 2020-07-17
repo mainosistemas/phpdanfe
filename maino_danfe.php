@@ -21,6 +21,8 @@ class MainoDanfe extends Danfe
         // Opções padrão da Mainô
         $this->exibirIcmsInterestadual = false;
         $this->exibirValorTributos     = false;
+        $this->exibirPIS               = false;
+        $this->descProdInfoComplemento = false;
         $this->creditsIntegratorFooter("Emitida por Mainô - www.maino.com.br");
     }
 
@@ -81,18 +83,18 @@ class MainoDanfe extends Danfe
     {
     }
 
-    // /**
-    //  * Verifica o status da NFe, aceitando que a NF-e esteja cancelada.
-    //  *
-    //  * @return array
-    //  */
-    // protected function statusNFe()
-    // {
-    //     if ($this->nfeCancelada) {
-    //         return ['status' => false, 'message' => 'NFe CANCELADA'];
-    //     } else {
-    //         parent::statusNFe();
-    //     }
+    /**
+     * Verifica o status da NFe, aceitando que a NF-e esteja cancelada.
+     *
+     * @return array
+     */
+    protected function statusNFe()
+    {
+        if ($this->nfeCancelada) {
+            return ['status' => false, 'message' => 'NFe CANCELADA'];
+        } else {
+            return parent::statusNFe();
+        }
 
-    // }
+    }
 }
