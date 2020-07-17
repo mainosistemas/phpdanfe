@@ -81,18 +81,18 @@ class MainoDanfe extends Danfe
     {
     }
 
-    /**
-     * Verifica o status da NFe, aceitando que a NF-e esteja cancelada.
-     *
-     * @return array
-     */
-    protected function statusNFe()
-    {
-        if ($this->nfeCancelada) {
-            return ['status' => false, 'message' => 'NFe CANCELADA'];
-        } else {
-            parent::statusNFe();
-        }
+    // /**
+    //  * Verifica o status da NFe, aceitando que a NF-e esteja cancelada.
+    //  *
+    //  * @return array
+    //  */
+    // protected function statusNFe()
+    // {
+    //     if ($this->nfeCancelada) {
+    //         return ['status' => false, 'message' => 'NFe CANCELADA'];
+    //     } else {
+    //         parent::statusNFe();
+    //     }
 
-    }
+    // }
 }
