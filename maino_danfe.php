@@ -36,6 +36,14 @@ class MainoDanfe extends Danfe
         return $this->pdf->getPdf();
     }
 
+    public function render_com_logo($logo)
+    {
+        if (empty($this->pdf)) {
+            $this->monta($logo);
+        }
+        return $this->pdf->getPdf();
+    }
+
      /**
      * habilitarImpressaoPisCofins
      * Ativa ou inativa a impressão dos totais de PIS e Cofins
