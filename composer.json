@@ -1,5 +1,5 @@
 {
     "require": {
-        "nfephp-org/sped-da": "^0.2.3"
+        "nfephp-org/sped-da": "^1.1.5"
     }
 }
