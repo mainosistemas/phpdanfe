@@ -24,16 +24,16 @@ try {
     }
 
     $danfe->nfeCancelada = isset($_POST['status_nfe']) && intval($_POST['status_nfe']) == 1;
-    $detalha_produtos_complemento = isset($_POST['detalha_produtos_complemento']) && $_POST['detalha_produtos_complemento'] == 'true';
-    $exibir_pis_cofins = isset($_POST['exibir_pis_cofins']) && $_POST['exibir_pis_cofins'] == 'true';
+    $detalhaProdutosComplemento = isset($_POST['detalha_produtos_complemento']) && $_POST['detalha_produtos_complemento'] == 'true';
+    $exibirPisCofins = isset($_POST['exibir_pis_cofins']) && $_POST['exibir_pis_cofins'] == 'true';
 
-    $danfe->habilitarImpressaoPisCofins($exibir_pis_cofins);
-    $danfe->habilitarImpressaoComplementoProduto($detalha_produtos_complemento);
+    $danfe->habilitarImpressaoPisCofins($exibirPisCofins);
+    $danfe->habilitarImpressaoComplementoProduto($detalhaProdutosComplemento);
 
     //Gera o PDF
     $pdf = $danfe->render_com_logo($logo);
     header('Content-Type: application/pdf');
     echo $pdf;
 } catch (InvalidArgumentException $e) {
-    echo "Ocorreu um erro durante o processamento :" . $e->getMessage();
+    echo "Ocorreu um erro durante o processamento: " . $e->getMessage();
 }
