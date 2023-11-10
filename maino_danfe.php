@@ -62,7 +62,7 @@ class MainoDanfe extends Danfe
      */
     public function definirMargemSuperior($margem = 2)
     {
-        $this->margSup = $margem;
+        $this->margsup = $margem;
     }
 
      /**
