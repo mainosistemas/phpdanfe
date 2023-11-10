@@ -11,10 +11,19 @@ try {
 
     $danfe = new MainoDanfe($xml);
     $danfe->debugMode(false);
+    echo 'pegar logo url';
+
     if (isset($_POST['logo_url'])) {
       $logo_url = explode('/', $_POST['logo_url']);
+      echo $logo_url;
+
       $filename = end($logo_url);
-      $logo     = realpath("./logos/{$filename}");
+      echo $filename;
+
+      $logo     =  realpath("./logos/{$filename}");
+      echo $logo;
+
+      echo 'terminou logo  url';
 
       if (!is_file($logo)) {
         copy($_POST['logo_url'], $logo);
