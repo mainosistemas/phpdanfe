@@ -8,7 +8,7 @@ try {
     $logo = '';
 
     $danfe = new MainoDanfe($xml);
-    $danfe->debugMode(true);
+    $danfe->debugMode(false);
     if (isset($_POST['logo_url'])) {
       $logo_url = explode('/', $_POST['logo_url']);
       $filename = end($logo_url);
