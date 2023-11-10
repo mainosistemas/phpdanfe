@@ -30,8 +30,8 @@ try {
       }
     }
 
-    if (isset($_POST['margSup'])) {
-      $danfe->definirMargemSuperior(intval($_POST['margSup']));
+    if (isset($_POST['margsup'])) {
+      $danfe->definirMargemSuperior(intval($_POST['margsup']));
     }
 
     $danfe->nfeCancelada = isset($_POST['status_nfe']) && intval($_POST['status_nfe']) == 1;
