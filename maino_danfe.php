@@ -91,7 +91,7 @@ class MainoDanfe extends Danfe
     protected function statusNFe()
     {
         if ($this->nfeCancelada) {
-            return ['status' => false, 'message' => 'NFe CANCELADA'];
+            return ['status' => false, 'message' => ['NFe CANCELADA'], 'submessage' => ''];
         } else {
             return parent::statusNFe();
         }
