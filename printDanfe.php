@@ -2,6 +2,8 @@
 include_once './vendor/autoload.php';
 include_once './maino_danfe.php';
 
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
 
 try {
     $xml  = $_POST['xml'];
@@ -12,7 +14,7 @@ try {
     if (isset($_POST['logo_url'])) {
       $logo_url = explode('/', $_POST['logo_url']);
       $filename = end($logo_url);
-      $logo     = realpath("../../logos/{$filename}");
+      $logo     = realpath("./logos/{$filename}");
 
       if (!is_file($logo)) {
         copy($_POST['logo_url'], $logo);
