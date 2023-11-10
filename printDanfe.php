@@ -20,7 +20,7 @@ try {
       $filename = end($logo_url);
       echo $filename;
 
-      $logo     =  realpath("./logos/{$filename}");
+      $logo     =  "logos/{$filename}";
       echo $logo;
 
       echo 'terminou logo  url';
