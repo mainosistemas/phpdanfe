@@ -105,8 +105,8 @@ class MainoDanfe extends Danfe
     */
     public function habilitarImpressaoAfrmm($habilitar = false, $valor = "0.00")
     {
-      $this->exibirAfrmm = $habilitar;
-      $this->valorAfrmm = $valor;
+      $this->exibirAFRMM = $habilitar;
+      $this->vAFRMM = $valor;
     }
 
     /**
