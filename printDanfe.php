@@ -11,19 +11,11 @@ try {
 
     $danfe = new MainoDanfe($xml);
     $danfe->debugMode(false);
-    echo 'pegar logo url';
 
     if (isset($_POST['logo_url'])) {
       $logo_url = explode('/', $_POST['logo_url']);
-      echo $logo_url;
-
       $filename = end($logo_url);
-      echo $filename;
-
       $logo     =  "logos/{$filename}";
-      echo $logo;
-
-      echo 'terminou logo  url';
 
       if (!is_file($logo)) {
         copy($_POST['logo_url'], $logo);
@@ -38,8 +30,14 @@ try {
     $detalhaProdutosComplemento = isset($_POST['detalha_produtos_complemento']) && $_POST['detalha_produtos_complemento'] == 'true';
     $exibirPisCofins = isset($_POST['exibir_pis_cofins']) && $_POST['exibir_pis_cofins'] == 'true';
 
+
+    $exibir_afrmm = isset($_POST['exibir_afrmm']) && $_POST['exibir_afrmm'] == 'true';
+    $valor_afrmm = $_POST['valor_afrmm'];
+
     $danfe->habilitarImpressaoPisCofins($exibirPisCofins);
     $danfe->habilitarImpressaoComplementoProduto($detalhaProdutosComplemento);
+
+    $danfe->habilitarImpressaoAfrmm($exibir_afrmm, $valor_afrmm);
 
     //Gera o PDF
     $pdf = $danfe->render_com_logo($logo);
