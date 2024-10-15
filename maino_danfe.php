@@ -20,6 +20,8 @@ class MainoDanfe extends Danfe
     {
         parent::__construct($xml);
 
+        date_default_timezone_set('America/Sao_Paulo');
+
         // Opções padrão da Mainô
         $this->exibirIcmsInterestadual = false;
         $this->exibirValorTributos     = false;
