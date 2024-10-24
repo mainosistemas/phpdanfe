@@ -1,8 +1,12 @@
 <?php
+
+use App\traits\FaturaDanfe;
+use App\traits\ItemDanfe;
 use NFePHP\DA\NFe\Danfe;
 
 class MainoDanfe extends Danfe
 {
+    use ItemDanfe, FaturaDanfe;
     protected $exibirAFRMM = false;
     protected $vAFRMM = "0.00";
     /**
