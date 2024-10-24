@@ -31,6 +31,7 @@ class MainoDanfe extends Danfe
         $this->exibirValorTributos     = false;
         $this->exibirPIS               = false;
         $this->descProdInfoComplemento = false;
+        $this->gerarInformacoesAutomaticas = true;
         $this->creditsIntegratorFooter("Emitida por Mainô - www.maino.com.br");
     }
 
